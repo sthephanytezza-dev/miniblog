@@ -3,7 +3,6 @@ import styles from "./CreatePost.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-import { useAuthentication } from "../../hooks/useAuthentication";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -11,8 +10,6 @@ const CreatePost = () => {
   const [body, setBody] = useState("");
   const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
-
-  const { createUser, error: authError, loading } = useAuthentication();
 
   const handleSubmit = (e) => {
     e.preventDefautl();
